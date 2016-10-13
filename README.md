@@ -36,13 +36,14 @@ apt-get update -y && apt-get upgrade -y && apt-get dist-upgrade -y && init 6
 ##### Bước 2:
 - Đăng nhập vào OS với tài khoản root.
 - Tạo và gán cấu hình sudo cho user `stack`
+(Vì các script của Devstack được viết cho user name là "stack")
 ```sh
 adduser stack
 apt-get -y install sudo 
 apt-get -y install git
 echo "stack ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
-
 ```
+(để cho user "stack" thực hiện tất cả các lệnh mà ko cần nhập pass sudo)
 
 - Chuyển từ tài khoản `root` sang tài khoản `stack` :
 ```sh
